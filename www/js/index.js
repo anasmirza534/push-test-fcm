@@ -69,6 +69,8 @@ var app = {
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
+
+            myAlert('on register', data.registrationId);
         });
 
         push.on('error', function(e) {
@@ -92,3 +94,12 @@ var app = {
        });
     }
 };
+
+function myAlert(title, message) {
+    navigator.notification.alert(
+        message,         // message
+        null,                 // callback
+        title,           // title
+        'Ok'                  // buttonName
+    );
+}
