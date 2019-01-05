@@ -82,6 +82,7 @@ var app = {
         push.on('notification', function(data) {
             console.log('notification event');
 
+            alert(JSON.stringify(data));
             alert(data.title + ': ' + data.message);
        });
     }
