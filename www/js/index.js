@@ -73,6 +73,12 @@ var app = {
 
         push.on('error', function(e) {
             console.log("push error = " + e.message);
+            navigator.notification.alert(
+                e.message,         // message
+                null,                 // callback
+                'Error',           // title
+                'Ok'                  // buttonName
+            );
         });
 
         push.on('notification', function(data) {
