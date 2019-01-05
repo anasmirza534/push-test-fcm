@@ -55,8 +55,6 @@ var app = {
 
         push.on('registration', function(data) {
             console.log('registration event: ' + data.registrationId);
-            // myAlert('on register', data.registrationId);
-            alert('on register: ' + JSON.stringify(data));
 
             var oldRegId = localStorage.getItem('registrationId');
             if (oldRegId !== data.registrationId) {
@@ -68,9 +66,11 @@ var app = {
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
             var receivedElement = parentElement.querySelector('.received');
+            var tokenElement = parentElement.querySelector('.token');
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
+            tokenElement.innerHTML(data.registrationId);
         });
 
         push.on('error', function(e) {
