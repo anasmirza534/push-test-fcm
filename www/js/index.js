@@ -70,7 +70,7 @@ var app = {
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
-            tokenElement.innerHTML(data.registrationId);
+            tokenElement.innerHTML = data.registrationId;
         });
 
         push.on('error', function(e) {
