@@ -75,31 +75,14 @@ var app = {
 
         push.on('error', function(e) {
             console.log("push error = " + e.message);
-            navigator.notification.alert(
-                e.message,         // message
-                null,                 // callback
-                'Error',           // title
-                'Ok'                  // buttonName
-            );
+
+            alert(e.message);
         });
 
         push.on('notification', function(data) {
             console.log('notification event');
-            navigator.notification.alert(
-                data.message,         // message
-                null,                 // callback
-                data.title,           // title
-                'Ok'                  // buttonName
-            );
+
+            alert(data.title + ': ' + data.message);
        });
     }
 };
-
-function myAlert(title, message) {
-    navigator.notification.alert(
-        message,         // message
-        null,                 // callback
-        title,           // title
-        'Ok'                  // buttonName
-    );
-}
